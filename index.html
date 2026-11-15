@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DACK FITNESS | Elite Personal Training & Coaching</title>
+    <!-- Google Fonts: Inter & Oswald for bold athletic typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            950: '#090d16',
+                            900: '#0f172a',
+                            850: '#162033',
+                            800: '#1e293b',
+                        },
+                        lime: {
+                            400: '#a3e635',
+                            500: '#84cc16',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-lime-400 selection:text-slate-950">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 w-full z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center space-x-2 group">
+                    <div class="w-10 h-10 bg-lime-400 rounded-lg flex items-center justify-center transform group-hover:rotate-6 transition-transform">
+                        <svg class="w-6 h-6 text-slate-950" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                        </svg>
+                    </div>
+                    <span class="font-display text-2xl font-bold tracking-wider text-white">DACK<span class="text-lime-400">.FITNESS</span></span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-slate-300 hover:text-lime-400 transition-colors">About</a>
+                    <a href="#programs" class="text-sm font-medium text-slate-300 hover:text-lime-400 transition-colors">Programs</a>
+                    <a href="#results" class="text-sm font-medium text-slate-300 hover:text-lime-400 transition-colors">Results</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-lg bg-lime-400 text-slate-950 font-semibold text-sm hover:bg-lime-500 transition-all shadow-lg shadow-lime-400/20">
+                        Book Free Consult
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="p-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle Menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-lime-400">About</a>
+            <a href="#programs" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-lime-400">Programs</a>
+            <a href="#results" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-lime-400">Results</a>
+            <a href="#contact" class="mobile-link block w-full text-center px-4 py-3 mt-2 rounded-lg bg-lime-400 text-slate-950 font-bold">Book Free Consult</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden">
+        <!-- Subtle Background Glow & Grid -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-lime-400/15 via-slate-950 to-slate-950 pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Hero Copy -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-lime-400 text-xs font-semibold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-lime-400 animate-pulse"></span>
+                        <span>Accepting New Clients for 2026</span>
+                    </div>
+                    
+                    <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold uppercase tracking-tight leading-[1.05] text-white">
+                        Forge Strength.<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-emerald-400">Build Unstoppable</span><br>
+                        Confidence.
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-slate-400 max-w-2xl leading-relaxed">
+                        Science-backed strength training, sustainable nutrition, and relentless accountability tailored to your lifestyle—no fad diets or cookie-cutter workouts.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <a href="#contact" class="inline-flex justify-center items-center px-8 py-4 rounded-xl bg-lime-400 text-slate-950 font-bold text-base hover:bg-lime-500 transition-all shadow-lg shadow-lime-400/25">
+                            Start Your Transformation
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                        </a>
+                        <a href="#programs" class="inline-flex justify-center items-center px-8 py-4 rounded-xl bg-slate-900 text-white font-semibold text-base border border-slate-800 hover:border-slate-700 hover:bg-slate-800 transition-all">
+                            Explore Programs
+                        </a>
+                    </div>
+
+                    <!-- Quick Metrics -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-800/80 max-w-lg">
+                        <div>
+                            <p class="font-display text-3xl font-bold text-white">250+</p>
+                            <p class="text-xs sm:text-sm text-slate-400">Clients Coached</p>
+                        </div>
+                        <div>
+                            <p class="font-display text-3xl font-bold text-lime-400">8+ Yrs</p>
+                            <p class="text-xs sm:text-sm text-slate-400">Experience</p>
+                        </div>
+                        <div>
+                            <p class="font-display text-3xl font-bold text-white">98%</p>
+                            <p class="text-xs sm:text-sm text-slate-400">Goal Retention</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl">
+                        <img 
+                            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80" 
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x950/1e293b/a3e635?text=ELITE+COACHING';"
+                            alt="Personal trainer coaching in a modern gym" 
+                            class="w-full h-[460px] sm:h-[540px] object-cover object-center"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-slate-700/70 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-lime-400 font-semibold uppercase tracking-wider">Next Intake</p>
+                                <p class="text-sm font-bold text-white">Only 4 Coaching Spots Left</p>
+                            </div>
+                            <span class="px-3 py-1 rounded-lg bg-lime-400/15 text-lime-400 text-xs font-bold border border-lime-400/30">
+                                1-on-1 & Online
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Philosophy Section -->
+    <section id="about" class="py-20 lg:py-28 bg-slate-900/50 border-y border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Coach Portrait -->
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <div class="relative rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+                        <img 
+                            src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" 
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x900/1e293b/a3e635?text=COACH+PROFILE';"
+                            alt="Head Personal Trainer" 
+                            class="w-full h-[420px] object-cover"
+                        >
+                    </div>
+                </div>
+
+                <!-- Philosophy & Credentials -->
+                <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+                    <p class="text-lime-400 font-semibold text-sm uppercase tracking-widest">About Your Coach</p>
+                    <h2 class="font-display text-4xl sm:text-5xl font-bold uppercase text-white leading-tight">
+                        Training Built Around Your Real Life—Not Vice Versa.
+                    </h2>
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                        Fitness shouldn't feel like a second full-time job. My coaching philosophy combines progressive overload strength training with flexible, sustainable nutrition habits so you can build lean muscle, drop stubborn body fat, and boost daily energy without sacrificing your social life or career.
+                    </p>
+
+                    <!-- Core Pillars -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                            <h3 class="font-bold text-white flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-lime-400"></span>
+                                Evidence-Based Programming
+                            </h3>
+                            <p class="text-sm text-slate-400 mt-1">Structured hypertrophy and strength cycles tailored to your biomechanics and injury history.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                            <h3 class="font-bold text-white flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-lime-400"></span>
+                                Habit-First Nutrition
+                            </h3>
+                            <p class="text-sm text-slate-400 mt-1">Macro targets and meal frameworks that adapt to business travel, family dinners, and busy schedules.</p>
+                        </div>
+                    </div>
+
+                    <!-- Credentials List -->
+                    <div class="pt-4">
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Certifications & Credentials</p>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="px-3.5 py-1.5 rounded-lg bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">NSCA Certified Strength & Conditioning (CSCS)</span>
+                            <span class="px-3.5 py-1.5 rounded-lg bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">Precision Nutrition Level 1</span>
+                            <span class="px-3.5 py-1.5 rounded-lg bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700">FMS Mobility Specialist</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Programs Section -->
+    <section id="programs" class="py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <p class="text-lime-400 font-semibold text-sm uppercase tracking-widest">Coaching Programs</p>
+                <h2 class="font-display text-4xl sm:text-5xl font-bold uppercase text-white">Choose Your Path to Peak Performance</h2>
+                <p class="text-slate-400 text-base sm:text-lg">Every program begins with a comprehensive movement and lifestyle assessment to ensure your plan fits you from day one.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: 1-on-1 Coaching -->
+                <div class="rounded-2xl bg-slate-900 border border-slate-800 p-8 flex flex-col justify-between hover:border-slate-700 transition-all">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 text-lime-400 flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold uppercase text-white">1-on-1 Coaching</h3>
+                        <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                            Hands-on private training sessions focused on form mastery, maximum intensity, and real-time adjustments.
+                        </p>
+                        <div class="my-6 pb-6 border-b border-slate-800">
+                            <span class="font-display text-4xl font-bold text-white">$320</span>
+                            <span class="text-slate-400 text-sm"> / month</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                            <li class="flex items-start gap-2.5">
+                                <svg class="w-5 h-5 text-lime-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                                <span>3x Weekly Private Gym Sessions</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <svg class="w-5 h-5 text-lime-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                                <span>Full Body Composition & Mobility Assessment</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <svg class="w-5 h-5 text-lime-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                                <span>Custom Off-Day Recovery & Cardio Plan</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <svg class="w-5 h-5 text-lime-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                                <span>Direct WhatsApp Accountability</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="selectProgram('1-on-1 Coaching')" class="w-full py-3.5 px-4 rounded-xl bg-slate-800 text-white font-semibold text-sm hover:bg-slate-700 transition-colors">
+                        Apply for 1-on-1
+                    </button>
+                </div>
+
+                <!-- Card 2: Online Programming (Most Popular) -->
+                <div class="rounded-2xl bg-slate-900 border-2 border-lime-400 p-8 flex flex-col justify-between relative shadow-2xl shadow-lime-400/10">
+                    <div class="absolute -top-3.5 right-6 px-3.5 py-1 rounded-full bg-lime-400 text-slate-950 text-xs font-bold uppercase tracking-wider">
+                        Most Popular
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-lime-400/15 text-lime-400 flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold uppercase text-white">Online Programming</h3>
+                        <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                            Train anywhere on your schedule with bespoke workouts, video form reviews, and weekly coaching check-ins.
+                        </p>
+                        <div class="my-6 pb-6 border-b border-slate-800">
+                            <span class="font-display text-4xl font-bold text-white">$180</span>
+                            <span class="text-slate-400 text-sm"> / month</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                            <li class="flex items-start gap-2.5">
+                                <svg class="w-5 h-5 text-lime-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                                <span>100% Custom Training App & Video Demos</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <svg class="w-5 h-5 text-lime-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                                <span>Weekly Loom Video Check-Ins & Adjustments</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <svg class="w-5 h-5 text-lime-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                                <span>Unlimited Lifting Technique Video Reviews</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <svg class="w-5 h-5 text-lime-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                                <span>Personalized Macro & Calorie Targets</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="selectProgram('Online Programming')" class="w-full py-3.5 px-4 rounded-xl bg-lime-400 text-slate-950 font-bold text-sm hover:bg-lime-500 transition-colors shadow-lg shadow-lime-400/20">
+                        Start Online Coaching
+                    </button>
+                </div>
+
+                <!-- Card 3: Nutrition Guidance -->
+                <div class="rounded-2xl bg-slate-900 border border-slate-800 p-8 flex flex-col justify-between hover:border-slate-700 transition-all">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 text-lime-400 flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold uppercase text-white">Nutrition Guidance</h3>
+                        <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                            Master fueling your body for fat loss, muscle gain, and sustained energy without restrictive meal plans.
+                        </p>
+                        <div class="my-6 pb-6 border-b border-slate-800">
+                            <span class="font-display text-4xl font-bold text-white">$120</span>
+                            <span class="text-slate-400 text-sm"> / month</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                            <li class="flex items-start gap-2.5">
+                                <svg class="w-5 h-5 text-lime-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                                <span>Tailored Calorie & Macronutrient Blueprint</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <svg class="w-5 h-5 text-lime-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                                <span>High-Protein Recipe Guide & Grocery Lists</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <svg class="w-5 h-5 text-lime-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                                <span>Bi-Weekly Biofeedback & Metabolic Audits</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <svg class="w-5 h-5 text-lime-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                                <span>Restaurant & Travel Dining Strategies</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="selectProgram('Nutrition Guidance')" class="w-full py-3.5 px-4 rounded-xl bg-slate-800 text-white font-semibold text-sm hover:bg-slate-700 transition-colors">
+                        Select Nutrition Plan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Transformations & Testimonials Section -->
+    <section id="results" class="py-20 lg:py-28 bg-slate-900/50 border-y border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <p class="text-lime-400 font-semibold text-sm uppercase tracking-widest">Proven Results</p>
+                <h2 class="font-display text-4xl sm:text-5xl font-bold uppercase text-white">Real People. Lasting Transformations.</h2>
+                <p class="text-slate-400 text-base sm:text-lg">Consistency + smart programming beats short-term extremes every single time.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="rounded-2xl bg-slate-900 border border-slate-800 p-8 space-y-6">
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 rounded-lg bg-lime-400/15 text-lime-400 text-xs font-bold">-14 kg Fat Loss • 16 Weeks</span>
+                        <div class="flex text-lime-400 text-sm">★★★★★</div>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed italic">
+                        "Working 50+ hours a week, I thought getting back in shape was impossible. The 4-day strength split and flexible macro targets completely changed my energy levels—and I never gave up weekend dinners with my family."
+                    </p>
+                    <div class="flex items-center gap-3.5 pt-2 border-t border-slate-800">
+                        <div class="w-11 h-11 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-display font-bold text-lime-400">
+                            MK
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-white">Marko Kovačević</p>
+                            <p class="text-xs text-slate-400">Software Architect • Online Coaching</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="rounded-2xl bg-slate-900 border border-slate-800 p-8 space-y-6">
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 rounded-lg bg-lime-400/15 text-lime-400 text-xs font-bold">+4.5 kg Lean Muscle • 6 Months</span>
+                        <div class="flex text-lime-400 text-sm">★★★★★</div>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed italic">
+                        "I used to feel intimidated stepping into the free-weights section. After three months of 1-on-1 coaching, I deadlifted 100kg with zero lower back pain and feel stronger than I did in my twenties."
+                    </p>
+                    <div class="flex items-center gap-3.5 pt-2 border-t border-slate-800">
+                        <div class="w-11 h-11 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-display font-bold text-lime-400">
+                            EN
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-white">Elena Nikolić</p>
+                            <p class="text-xs text-slate-400">Marketing Director • 1-on-1 Coaching</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="rounded-2xl bg-slate-900 border border-slate-800 p-8 space-y-6">
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 rounded-lg bg-lime-400/15 text-lime-400 text-xs font-bold">-9% Body Fat • 12 Weeks</span>
+                        <div class="flex text-lime-400 text-sm">★★★★★</div>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed italic">
+                        "The weekly video check-ins kept me accountable when motivation dipped. Having someone adjust my training and nutrition based on real data took all the guesswork out of getting lean."
+                    </p>
+                    <div class="flex items-center gap-3.5 pt-2 border-t border-slate-800">
+                        <div class="w-11 h-11 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-display font-bold text-lime-400">
+                            DS
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-white">David Stojanović</p>
+                            <p class="text-xs text-slate-400">Entrepreneur • Online + Nutrition</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Booking Section -->
+    <section id="contact" class="py-20 lg:py-28">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl bg-slate-900 border border-slate-800 overflow-hidden shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12">
+                    <!-- Left Info Panel -->
+                    <div class="lg:col-span-5 p-8 sm:p-10 bg-gradient-to-br from-slate-850 to-slate-900 border-b lg:border-b-0 lg:border-r border-slate-800 flex flex-col justify-between space-y-8">
+                        <div class="space-y-4">
+                            <p class="text-lime-400 font-semibold text-xs uppercase tracking-widest">Free 20-Min Strategy Call</p>
+                            <h2 class="font-display text-3xl sm:text-4xl font-bold uppercase text-white leading-tight">
+                                Ready to Build Your Best Physique?
+                            </h2>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Fill out the application form to schedule your complimentary consultation. We'll map out your goals, training schedule, and exact next steps.
+                            </p>
+                        </div>
+
+                        <div class="space-y-4 text-sm">
+                            <div class="flex items-center gap-3 text-slate-300">
+                                <div class="w-9 h-9 rounded-lg bg-slate-800 text-lime-400 flex items-center justify-center shrink-0">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                                </div>
+                                <span>coach@dack.rs</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-300">
+                                <div class="w-9 h-9 rounded-lg bg-slate-800 text-lime-400 flex items-center justify-center shrink-0">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                                </div>
+                                <span>Belgrade, Serbia & Worldwide Online</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Form Panel -->
+                    <div class="lg:col-span-7 p-8 sm:p-10">
+                        <form id="booking-form" class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Full Name *</label>
+                                    <input type="text" id="name" name="name" required placeholder="Alex Morgan" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-lime-400 transition-colors">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Email Address *</label>
+                                    <input type="email" id="email" name="email" required placeholder="alex@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-lime-400 transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="program" class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Program Interest</label>
+                                    <select id="program" name="program" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-lime-400 transition-colors">
+                                        <option value="1-on-1 Coaching">1-on-1 Coaching</option>
+                                        <option value="Online Programming" selected>Online Programming</option>
+                                        <option value="Nutrition Guidance">Nutrition Guidance</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="goal" class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Primary Goal</label>
+                                    <select id="goal" name="goal" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-lime-400 transition-colors">
+                                        <option value="Fat Loss & Toning">Fat Loss & Toning</option>
+                                        <option value="Muscle & Strength Gain">Muscle & Strength Gain</option>
+                                        <option value="Athletic Performance">Athletic Performance</option>
+                                        <option value="General Health & Energy">General Health & Energy</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Tell Me About Your Current Routine & Goals</label>
+                                <textarea id="message" name="message" rows="3" placeholder="How many days per week can you train? Any past injuries?" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-lime-400 transition-colors"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 px-6 rounded-xl bg-lime-400 text-slate-950 font-bold text-base hover:bg-lime-500 transition-all shadow-lg shadow-lime-400/20">
+                                Request Free Consultation
+                            </button>
+
+                            <!-- Custom Inline Feedback Message Box (Replaces alert()) -->
+                            <div id="form-feedback" class="hidden p-4 rounded-xl bg-lime-400/15 border border-lime-400/40 text-lime-300 text-sm font-medium"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-slate-800/80 text-center sm:text-left">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-2">
+                <span class="font-display text-xl font-bold tracking-wider text-white">DACK<span class="text-lime-400">.FITNESS</span></span>
+                <span class="text-slate-600">|</span>
+                <span class="text-xs text-slate-400">© 2026 All Rights Reserved.</span>
+            </div>
+            <div class="flex space-x-6 text-sm text-slate-400">
+                <a href="#about" class="hover:text-lime-400 transition-colors">About</a>
+                <a href="#programs" class="hover:text-lime-400 transition-colors">Programs</a>
+                <a href="#results" class="hover:text-lime-400 transition-colors">Results</a>
+                <a href="#contact" class="hover:text-lime-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Script for Mobile Menu, Program Selection, and Form Handling -->
+    <script>
+        // Toggle mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            menuIconOpen.classList.toggle('hidden');
+            menuIconClose.classList.toggle('hidden');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+        // Auto-select program in form when clicking a pricing card button
+        function selectProgram(programName) {
+            const programSelect = document.getElementById('program');
+            const contactSection = document.getElementById('contact');
+            
+            programSelect.value = programName;
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Handle form submission cleanly without native alert()
+        const bookingForm = document.getElementById('booking-form');
+        const formFeedback = document.getElementById('form-feedback');
+
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const program = document.getElementById('program').value;
+
+            formFeedback.textContent = `Thanks, ${name}! Your consultation request for ${program} has been received. I'll reach out within 24 hours to lock in your call.`;
+            formFeedback.classList.remove('hidden');
+            bookingForm.reset();
+        });
+    </script>
+</body>
+</html>
