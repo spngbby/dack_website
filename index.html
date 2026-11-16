@@ -1,324 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JDACK Fitness</title>
-
+<!doctype html>
+<html lang="sr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DACK Fitness Bootcamp | Zvezdara</title>
+<meta name="description" content="DACK Fitness Bootcamp – individualni, vođeni treninzi i treninzi u paru u teretani Corpo, Vjekoslava Kovača 11, Zvezdara, Beograd.">
 <style>
-:root{
-    --bg:#ffffff;
-    --card:#f5f5f5;
-    --text:#111111;
-    --accent:#f7e859;
-    --border:#dddddd;
-}
+:root{--lav:#9586bd;--purple:#7665a8;--yellow:#ffbf3f;--black:#15121a;--white:#fff;--soft:#f5f2fa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--black);line-height:1.55}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+header{background:var(--lav);position:sticky;top:0;z-index:5}.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{width:205px;max-height:68px;object-fit:contain}.links{display:flex;gap:26px;font-weight:800;font-size:14px}.btn{display:inline-block;background:var(--yellow);padding:14px 23px;border-radius:30px;font-weight:900;border:0;cursor:pointer}
+.hero{color:white;min-height:560px;background:linear-gradient(90deg,#17131ef2 0%,#21192edb 42%,#21192e00 76%),url('assets/founder_training.jpg') center 42%/cover;display:flex;align-items:center}.hero-copy{max-width:650px;padding:70px 0}.eyebrow{color:var(--yellow);font-weight:900;letter-spacing:.14em;font-size:13px}.hero h1{font-size:clamp(42px,6vw,76px);line-height:1;letter-spacing:-.04em;margin:15px 0}.hero h1 span{display:block;color:var(--yellow)}.hero p{font-size:19px;max-width:520px}.meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:30px;font-size:13px;font-weight:bold}.meta span{border-left:2px solid var(--lav);padding-left:12px}
+section{padding:78px 0}.head{text-align:center;margin:0 auto 36px;max-width:700px}.head .eyebrow{color:var(--purple)}h2{font-size:clamp(30px,4vw,45px);line-height:1.08;margin:8px 0;text-transform:uppercase}.head p{color:#625d68}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:var(--soft);border-radius:16px;overflow:hidden;box-shadow:0 8px 24px #17102012}.card img{width:100%;height:220px;object-fit:cover}.card div{padding:22px}.card h3{margin:0 0 8px;text-transform:uppercase}.card p{color:#5f5a65}.more{color:var(--purple);font-weight:900}
+.about{background:var(--black);color:white}.aboutgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}.about img{width:100%;height:410px;object-fit:cover;border-radius:16px}.about p{color:#ded9e5;font-size:17px}.about ul{padding-left:20px}.about li{margin:9px 0}.location{background:var(--soft)}.locgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.locbox{background:white;border-radius:16px;padding:28px}.placeholder{padding:13px;border:1.5px dashed #b6a9d2;border-radius:10px;background:#faf8fd;color:#6f687b;margin:12px 0}.placeholder b{display:block;color:var(--purple);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.contact{background:#17141c;color:white}.contactgrid{display:grid;grid-template-columns:1fr 1fr;gap:45px}.contact p{color:#ddd6e6}.form{display:grid;gap:12px}.form input,.form textarea,.form select{width:100%;padding:14px;border:1px solid #ddd;border-radius:9px;font:inherit}.form textarea{min-height:100px}.note{font-size:12px;color:#c8bfd1}
+footer{background:var(--lav);padding:24px 0}.foot{display:flex;align-items:center;justify-content:space-between;gap:20px}.foot img{width:180px;max-height:58px;object-fit:contain}.footnav{display:flex;gap:18px;font-size:13px;font-weight:800}
+.edittools{position:fixed;right:16px;bottom:16px;z-index:10;display:flex;gap:8px}.edittools button{padding:12px 15px;border:0;border-radius:24px;font-weight:bold;cursor:pointer;box-shadow:0 4px 18px #0003}.edit{background:white}.save{background:var(--yellow)}.editing [data-edit]{outline:2px dashed var(--yellow);outline-offset:4px;cursor:text}.hint{display:none;position:fixed;left:15px;bottom:15px;background:#15121a;color:white;padding:10px 13px;border-radius:8px;font-size:12px;z-index:10}
+@media(max-width:780px){.links{display:none}.nav{height:72px}.logo{width:170px}.hero{min-height:570px;background-position:60% center}.hero:before{content:"";position:absolute;inset:72px 0 auto;height:570px;background:#17131e55}.hero-copy{position:relative}.cards{grid-template-columns:1fr}.aboutgrid,.locgrid,.contactgrid{grid-template-columns:1fr}.about img{height:300px}.foot{flex-direction:column}.footnav{flex-wrap:wrap;justify-content:center}section{padding:60px 0}}
 
-[data-theme="dark"]{
-    --bg:#111111;
-    --card:#1a1a1a;
-    --text:#ffffff;
-    --accent:#f7e859;
-    --border:#333333;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    transition:.3s ease;
-    line-height:1.6;
-}
-
-.container{
-    width:min(1200px,90%);
-    margin:auto;
-}
-
-header{
-    padding:30px 0;
-    border-bottom:1px solid var(--border);
-}
-
-.nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.logo img{
-    width:75px;
-    height:75px;
-    object-fit:contain;
-    border-radius:10px;
-}
-
-.logo h1{
-    font-size:1.8rem;
-}
-
-.toggle{
-    background:var(--accent);
-    border:none;
-    padding:10px 18px;
-    cursor:pointer;
-    border-radius:8px;
-    font-weight:bold;
-    color:#111;
-}
-
-.hero{
-    text-align:center;
-    padding:80px 0;
-}
-
-.hero h2{
-    font-size:3rem;
-    margin-bottom:20px;
-}
-
-.hero p{
-    max-width:800px;
-    margin:auto;
-}
-
-section{
-    padding:70px 0;
-}
-
-.section-title{
-    font-size:2rem;
-    margin-bottom:30px;
-    position:relative;
-}
-
-.section-title::after{
-    content:"";
-    display:block;
-    width:90px;
-    height:4px;
-    background:var(--accent);
-    margin-top:10px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:var(--card);
-    padding:25px;
-    border-radius:15px;
-    border:1px solid var(--border);
-}
-
-.card h3{
-    margin-bottom:15px;
-}
-
-.hours,
-.rules,
-.location,
-.contact{
-    background:var(--card);
-    padding:30px;
-    border-radius:15px;
-    border:1px solid var(--border);
-}
-
-.contact-links{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
-    margin-top:20px;
-}
-
-.contact-links a{
-    text-decoration:none;
-    color:var(--text);
-    background:var(--accent);
-    padding:10px 15px;
-    border-radius:8px;
-    font-weight:bold;
-}
-
-footer{
-    text-align:center;
-    padding:30px 0;
-    border-top:1px solid var(--border);
-    margin-top:50px;
-}
-
-.highlight{
-    color:var(--accent);
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <div class="container nav">
-
-        <div class="logo">
-            <!-- Replace path with your uploaded logo -->
-            <img src="logo.jpg" alt="JDACK Logo">
-            <h1>JDACK</h1>
-        </div>
-
-        <button class="toggle" onclick="toggleTheme()">
-            Toggle Theme
-        </button>
-
-    </div>
-</header>
-
-<section class="hero">
-    <div class="container">
-        <h2>Welcome to <span class="highlight">JDACK</span></h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            vestibulum, nunc vitae suscipit feugiat, lacus nisi placerat
-            eros, id luctus purus sem vel odio. Integer ac tortor
-            venenatis, aliquet tortor at, facilisis elit.
-        </p>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <h2 class="section-title">Our Trainers</h2>
-
-        <div class="grid">
-
-            <div class="card">
-                <h3>Trainer One</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Vestibulum viverra lacus nec ligula tincidunt, sit amet
-                    interdum mauris sodales. Nulla facilisi.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Trainer Two</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Donec feugiat, orci nec tincidunt posuere, neque lorem
-                    bibendum lorem, nec faucibus libero risus vitae erat.
-                </p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <h2 class="section-title">Work Hours</h2>
-
-        <div class="hours">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas rutrum lorem vel augue gravida, sit amet
-                porttitor nunc faucibus.
-            </p>
-
-            <br>
-
-            <p>
-                Monday - Friday: Lorem ipsum dolor sit amet.<br>
-                Saturday: Lorem ipsum dolor sit amet.<br>
-                Sunday: Lorem ipsum dolor sit amet.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <h2 class="section-title">Rules</h2>
-
-        <div class="rules">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <h2 class="section-title">Contact & Social Media</h2>
-
-        <div class="contact">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-
-            <div class="contact-links">
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-                <a href="#">TikTok</a>
-                <a href="#">YouTube</a>
-            </div>
-
-            <br>
-
-            <p>Email: lorem@ipsum.com</p>
-            <p>Phone: +123 456 789 000</p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <h2 class="section-title">Location</h2>
-
-        <div class="location">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Praesent pulvinar, turpis sed tincidunt volutpat, libero
-                lorem finibus sapien, non elementum dolor sem vel nibh.
-            </p>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <div class="container">
-        <p>© 2026 JDACK. Lorem ipsum dolor sit amet.</p>
-    </div>
-</footer>
-
+section[id]{scroll-margin-top:100px}.links{gap:16px;font-size:12px}.nav>.btn{white-space:nowrap}.nav .logo{width:175px}.footnav{flex-wrap:wrap}.foot>b{max-width:260px}
+.results{background:var(--soft)}.results-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start}.results-layout h2{margin-top:12px}.results-intro{color:#625d68}.progress-list{margin:0;padding:0;list-style:none;counter-reset:progress}.progress-list li{counter-increment:progress;display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid #dcd5e8}.progress-list li:first-child{padding-top:0}.progress-list li::before{content:"0" counter(progress);color:var(--purple);font-weight:900;font-size:24px}.progress-list h3{margin:0 0 6px}.progress-list p{margin:0;color:#625d68}
+.gallery-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:22px}.gallery-grid figure{margin:0;overflow:hidden;border-radius:16px;background:var(--soft)}.gallery-grid figure:first-child{grid-row:span 2}.gallery-grid img{display:block;width:100%;height:240px;object-fit:cover}.gallery-grid figure:first-child img{height:calc(100% - 53px);min-height:300px}.gallery-grid figcaption{padding:14px 20px;font-weight:800;font-size:14px}
+.equipment{background:var(--lav)}.equipment-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}.equipment .eyebrow{color:var(--black)}.equipment p{font-size:17px}.equipment-note{border-left:3px solid var(--yellow);padding:8px 0 8px 28px}.equipment-note h3{margin:0 0 10px;text-transform:uppercase}a:focus-visible,button:focus-visible{outline:3px solid var(--purple);outline-offset:5px}
+@media(min-width:781px) and (max-width:1100px){.nav{height:auto;min-height:82px;flex-wrap:wrap;padding:12px 0;gap:12px}.links{order:3;width:100%;justify-content:center;flex-wrap:wrap}}
+@media(max-width:780px){.nav{height:auto;min-height:72px;flex-wrap:wrap;padding:10px 0;gap:10px}.nav .logo{width:130px}.nav>.btn{font-size:12px;padding:11px 14px}.links{display:flex;order:3;gap:10px 18px;flex-wrap:wrap;justify-content:center;width:100%;font-size:11px}.results-layout,.equipment-layout,.gallery-grid{grid-template-columns:1fr;gap:26px}.gallery-grid figure:first-child{grid-row:auto}.gallery-grid figure:first-child img{height:300px;min-height:0}.gallery-grid img{height:300px}section[id]{scroll-margin-top:150px}.hero:before{display:none}.hero{background-image:linear-gradient(90deg,#17131ee6,#21192e66),url('assets/founder_training.jpg')}}
+#galerija .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}#galerija .gallery-grid figure:first-child{grid-row:auto}#galerija .gallery-grid img{height:auto;min-height:0}#galerija .gallery-grid a{display:block}@media(max-width:780px){#galerija .gallery-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body>
+<header><div class="wrap nav"><a href="#pocetna"><img class="logo" src="assets/logo.png" alt="DACK Fitness Bootcamp logo"></a><nav class="links"><a href="#pocetna">POČETNA</a><a href="#treninzi">TRENINZI</a><a href="#onama">O NAMA</a><a href="#rezultati">REZULTATI</a><a href="#galerija">GALERIJA</a><a href="#oprema">OPREMA</a><a href="#kontakt">KONTAKT</a></nav><a class="btn" href="#kontakt">ZAKAŽI TRENING →</a></div></header>
+<main>
+<section class="hero" id="pocetna"><div class="wrap"><div class="hero-copy"><div class="eyebrow" data-edit>DACK FITNESS BOOTCAMP</div><h1 data-edit>TVOJ TRENING.<br>TVOJ TEMPO.<span>TVOJ NAPREDAK.</span></h1><p data-edit>Individualni, vođeni treninzi i treninzi u paru – uz podršku trenera na svakom koraku.</p><a class="btn" href="#kontakt">ZAKAŽI PRVI TRENING →</a><div class="meta"><span data-edit>STRUČNO VOĐENJE</span><span data-edit>PODRŠKA I MOTIVACIJA</span><span>CORPO · ZVEZDARA</span></div></div></div></section>
+<section id="treninzi"><div class="wrap"><div class="head"><div class="eyebrow">NAŠI TRENINZI</div><h2>IZABERI SVOJ NAČIN TRENINGA</h2><p data-edit>Pronađi format koji odgovara tvojim ciljevima, tempu i načinu života.</p></div><div class="cards">
+<article class="card"><img src="assets/individualni-trening.jpg" alt="Trening"><div><h3 data-edit>Individualni treninzi</h3><p data-edit>Trening jedan na jedan sa trenerom uz potpunu posvećenost, savete o ishrani, lični program prilagođen tvojim potrebama uz maksimalne rezultate.</p><a class="more" href="#kontakt">ZANIMA ME →</a></div></article>
+<article class="card"><img src="assets/vodjeni-treninzi.jpg" alt="DACK zajednica"><div><h3 data-edit>Vođeni treninzi</h3><p data-edit>Do pet članova, zanimljiv trening prilagođen svakom vežbaču uz stručni nadzor. Atmosfera čini ovaj koncept rada jednim od najzanimljivijih i najpopularnijih.</p><a class="more" href="#kontakt">ZANIMA ME →</a></div></article>
+<article class="card"><img src="assets/treninzi-u-paru.jpg" alt="Trener na treningu"><div><h3 data-edit>Treninzi u paru</h3><p data-edit>Treniraj sa jednom ili dve osobe, imaj inspirativniji i zabavniji trening, uživaj posvećenost trenera i ostvari odlične rezultate uz manju članarinu. Trening je prilagođen svakom pojedincu. Na trening možeš doći sam(a), a mi ćemo ti dodeliti nekog od naših članova koji je zainteresovan za duo trening.</p><a class="more" href="#kontakt">ZANIMA ME →</a></div></article></div></div></section>
+<section class="about" id="onama"><div class="wrap aboutgrid"><img src="assets/vise-od-treninga.jpg" alt="DACK zajednica"><div><div class="eyebrow">UPOZNAJ DACK</div><h2 data-edit>VIŠE OD TRENINGA.</h2><p data-edit>DACK Fitness Bootcamp je mesto za rad na sebi, kretanje i stvaranje zdravijih navika. Verujemo u doslednost, podršku i trening prilagođen osobi.</p><ul><li data-edit>Individualni pristup</li><li data-edit>Vođenje i podrška tokom treninga</li><li data-edit>Motivišuće okruženje</li></ul><div class="placeholder" data-edit>Osnivač DACK fitness bootcampa je Danilo Šćekić, profesor sporta i fizičke kulture (DIF) i bivši profesionalni vaterpolista sa domaćom i inostranom karijerom i medaljama.<br>Višegodišnje iskustvo u trenerskom poslu.</div></div></div></section>
+<section class="results" id="rezultati"><div class="wrap"><div class="head"><h2>REZULTATI</h2></div></div></section>
+<section id="galerija"><div class="wrap"><div class="head"><h2>GALERIJA</h2></div><div class="gallery-grid"><figure><a href="assets/galerija-1.jpg" target="_blank" rel="noopener" aria-label="Otvori fotografiju 1 u većem prikazu"><img src="assets/galerija-1.jpg" alt="Vežbačica na strunjači pored bokserskih rukavica u teretani" width="901" height="1600" loading="lazy" decoding="async"></a></figure><figure><a href="assets/galerija-2.jpg" target="_blank" rel="noopener" aria-label="Otvori fotografiju 2 u većem prikazu"><img src="assets/galerija-2.jpg" alt="Vežbač radi vežbu sa elastičnom trakom" width="720" height="1600" loading="lazy" decoding="async"></a></figure><figure><a href="assets/galerija-3.jpg" target="_blank" rel="noopener" aria-label="Otvori fotografiju 3 u većem prikazu"><img src="assets/galerija-3.jpg" alt="Grupni trening na strunjačama uz nadzor trenera" width="1200" height="1600" loading="lazy" decoding="async"></a></figure><figure><a href="assets/galerija-4.jpg" target="_blank" rel="noopener" aria-label="Otvori fotografiju 4 u većem prikazu"><img src="assets/galerija-4.jpg" alt="Trening boksa u paru u teretani" width="1200" height="1600" loading="lazy" decoding="async"></a></figure></div></div></section>
+<section class="equipment" id="oprema"><div class="wrap"><div class="head"><h2>OPREMA</h2></div></div></section>
+<section class="location"><div class="wrap"><div class="head"><div class="eyebrow">GDE TRENIRAMO</div><h2>PRONAĐI NAS NA ZVEZDARI</h2><p>Treninzi se održavaju u teretani Corpo, Vjekoslava Kovača 11, Zvezdara, Beograd.</p></div><div class="locgrid"><div class="locbox"><h3>Lokacija</h3><p><b>Teretana Corpo</b><br>Vjekoslava Kovača 11<br>Zvezdara, Beograd</p><a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Teretana+Corpo+Vjekoslava+Kova%C4%8Da+11+Beograd">PRONAĐI LOKACIJU NA MAPI ↗</a></div><div class="locbox"><h3>Kontakt podaci</h3><div class="placeholder"><b>Telefon</b><a href="tel:+381642028282">0642028282</a></div><div class="placeholder"><b>E-mail</b>Dodaj e-mail adresu</div><div class="placeholder"><b>Instagram</b>Dodaj link ka Instagram profilu</div><div class="placeholder"><b>Radno vreme</b>Dodaj radno vreme</div></div></div></div></section>
+<section class="contact" id="kontakt"><div class="wrap contactgrid"><div><div class="eyebrow">NAPRAVI PRVI KORAK</div><h2 data-edit>SPREMAN/NA SI ZA TRENING?</h2><p data-edit>Javi nam se i raspitaj se o treninzima. Popuni podatke i odaberi način na koji želiš da te kontaktiramo.</p><p><b>DACK FITNESS BOOTCAMP</b><br>Teretana Corpo · Vjekoslava Kovača 11 · Zvezdara · Beograd</p><div class="placeholder"><b>Telefon</b><a href="tel:+381642028282">0642028282</a></div></div><form class="form" action="https://formsubmit.co/dackpostovi@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="Novi upit – DACK Fitness Bootcamp">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="true">
+<input type="text" name="Ime i prezime" placeholder="Ime i prezime" aria-label="Ime i prezime" required>
+<input type="tel" name="Telefon" placeholder="Broj telefona" aria-label="Broj telefona" required>
+<input type="email" name="E-mail" placeholder="E-mail (opciono)" aria-label="E-mail">
+<select name="Vrsta treninga" aria-label="Vrsta treninga" required><option value="">Koji trening te zanima?</option><option>Individualni trening</option><option>Vođeni trening</option><option>Trening u paru</option><option>Više informacija</option></select>
+<textarea name="Poruka" placeholder="Poruka (opciono)" aria-label="Poruka"></textarea>
+<button class="btn" type="submit">POŠALJI UPIT →</button>
+<div class="note">Slanjem forme saglasni ste da vas DACK kontaktira povodom vašeg upita. Podaci se koriste samo za odgovor na upit.</div>
+</form></div></section>
+</main><footer><div class="wrap foot"><img src="assets/logo.png" alt="DACK Fitness Bootcamp"><nav class="footnav"><a href="#pocetna">POČETNA</a><a href="#treninzi">TRENINZI</a><a href="#onama">O NAMA</a><a href="#rezultati">REZULTATI</a><a href="#galerija">GALERIJA</a><a href="#oprema">OPREMA</a><a href="#kontakt">KONTAKT</a></nav><b data-edit>Tvoj trening. Tvoj tempo. Tvoj napredak.</b></div></footer>
+<div class="edittools"><button class="edit" id="toggle">✎ Uredi tekstove</button><button class="save" id="save" hidden>Sačuvaj izmene</button><button class="edit" id="download" hidden>Preuzmi HTML</button></div><div class="hint" id="hint">Klikni na tekst i izmeni ga. Izmene su lokalne dok ne preuzmeš ažurirani HTML.</div>
 <script>
-function toggleTheme() {
-    const currentTheme =
-        document.documentElement.getAttribute("data-theme");
-
-    if(currentTheme === "dark"){
-        document.documentElement.setAttribute("data-theme","light");
-    } else {
-        document.documentElement.setAttribute("data-theme","dark");
-    }
-}
-</script>
-
-</body>
-</html>
+const toggle=document.querySelector('#toggle'),save=document.querySelector('#save'),download=document.querySelector('#download'),hint=document.querySelector('#hint');let on=false;
+function setMode(v){on=v;document.body.classList.toggle('editing',v);document.querySelectorAll('[data-edit]').forEach(e=>e.contentEditable=v);save.hidden=!v;download.hidden=!v;hint.style.display=v?'block':'none';toggle.textContent=v?'Završi uređivanje':'✎ Uredi tekstove'}
+toggle.onclick=()=>setMode(!on);
+function collect(){let d={};document.querySelectorAll('[data-edit]').forEach((e,i)=>d[i]=e.innerHTML);return d}
+function apply(d,root=document){root.querySelectorAll('[data-edit]').forEach((e,i)=>{if(d[i]!==undefined)e.innerHTML=d[i]})}
+save.onclick=()=>{localStorage.setItem('dack-site-edits',JSON.stringify(collect()));alert('Sačuvano u ovom pregledaču. Preuzmi HTML da sačuvaš izmene u fajlu.');};
+download.onclick=()=>{let root=document.documentElement.cloneNode(true);apply(collect(),root);root.querySelectorAll('[contenteditable]').forEach(e=>e.removeAttribute('contenteditable'));root.querySelector('.edittools')?.remove();root.querySelector('.hint')?.remove();root.querySelector('body').classList.remove('editing');let blob=new Blob(['<!doctype html>\n'+root.outerHTML],{type:'text/html'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='dack-index.html';a.click();URL.revokeObjectURL(a.href)};
+try{apply(JSON.parse(localStorage.getItem('dack-site-edits')||'{}'))}catch(e){}
+</script></body></html>

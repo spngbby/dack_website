@@ -1,0 +1,11 @@
+DACK FITNESS BOOTCAMP – početna verzija sajta
+
+PREGLED: Otvorite index.html u Chrome-u ili drugom pregledaču.
+UREĐIVANJE: Kliknite „Uredi tekstove“, pa kliknite na tekst i menjajte ga direktno na stranici. „Sačuvaj izmene“ pamti ih u tom pregledaču. „Preuzmi HTML“ pravi HTML fajl sa vašim tekstualnim izmenama.
+SLIKE I LOGO: Nalaze se u folderu assets. Ne odvajajte ih od index.html.
+VAŽNO: Kontakt forma je probna i trenutno ne šalje poruke. Pre objavljivanja je treba povezati sa servisom za prijem formi. Lokalne izmene se ne objavljuju automatski na internetu.
+OBJAVLJIVANJE: Kada proverite i dopunite sadržaj, možete prevući ceo folder (index.html i assets) u Netlify Drop. Za kasnije izmene ponovo objavite ažurirani folder. Povezivanje sopstvenog domena se radi u podešavanjima Netlify sajta.
+
+
+KONTAKT FORMA:
+Upiti su podešeni da se šalju na danilo.scekic@gmail.com preko FormSubmit-a. Pre javnog korišćenja pošalji probni upit sa objavljenog sajta i potvrdi aktivacioni e-mail koji FormSubmit šalje na ovu adresu. Proveri Spam/Neželjenu poštu ako poruka ne stigne. Dok se adresa ne potvrdi, prosleđivanje možda neće raditi.
